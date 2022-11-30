@@ -1,0 +1,24 @@
+using System;
+
+public class Program
+{
+	//const is where you cant change it, first variable is baseFair and setting it to 2.5
+	const double baseFair = 2.5;
+	public static double MyMethod(double milesTravelled) //making the method (double milesTravelled)
+	{
+		double fiftyPence = 0.5 / 1.5; //this is dividing 0.5 (50p by 1.5 which is miles travelled) to find cost per mile
+		double answer = milesTravelled * fiftyPence + baseFair; //multiplying milesTravelled and 50p and adding the baseFair (2.5)
+		double newAnswer = Math.Truncate(answer);// rounded to the nearest integer (whole number)
+		return newAnswer; // return the rounded answer
+	}
+	public static void Main(string[] args)
+	{
+		// Prompt User to enter milesTravelled
+		Console.WriteLine("Enter your miles travelled");
+		// Take User Input for milesTravelled
+		double milesTravelled = Convert.ToDouble(Console.ReadLine());
+		
+		// Output answer
+		Console.WriteLine(MyMethod(milesTravelled));
+	}
+}
